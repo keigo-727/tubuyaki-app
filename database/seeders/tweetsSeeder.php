@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Suppoort\Facades\DB;
-use Illuminate\Suppoort\Str;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class tweetsSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class tweetsSeeder extends Seeder
     {
     DB::table('tweets')->insert([
         'content' => Str::random(100),
-        'creted_at' =>now(),
+        'created_at' =>now(),
         'updated_at' =>now(),
     ]);
     }

@@ -121,6 +121,7 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
             'Laravel\\SerializableClosure\\' => 28,
             'Laravel\\Sanctum\\' => 16,
             'Laravel\\Sail\\' => 13,
+            'LaravelLang\\Lang\\' => 17,
         ),
         'I' => 
         array (
@@ -403,6 +404,10 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         array (
             0 => __DIR__ . '/..' . '/laravel/sail/src',
         ),
+        'LaravelLang\\Lang\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/laravel-lang/lang/src',
+        ),
         'Illuminate\\Support\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Macroable',
@@ -508,6 +513,7 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\Tweet\\CreateController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tweet/CreateController.php',
         'App\\Http\\Controllers\\Tweet\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/Tweet/IndexController.php',
         'App\\Http\\Controllers\\sample\\IndexController' => __DIR__ . '/../..' . '/app/Http/Controllers/sample/IndexController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -520,6 +526,8 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'App\\Http\\Middleware\\TrustProxies' => __DIR__ . '/../..' . '/app/Http/Middleware/TrustProxies.php',
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
+        'App\\Http\\Requests\\Tweet\\CreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Tweet/CreateRequest.php',
+        'App\\Models\\Tweet' => __DIR__ . '/../..' . '/app/Models/Tweet.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -636,8 +644,10 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\TweetFactory' => __DIR__ . '/../..' . '/database/factories/TweetFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\tweetsSeeder' => __DIR__ . '/../..' . '/database/seeders/tweetsSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -2685,6 +2695,18 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'Illuminate\\View\\ViewFinderInterface' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewFinderInterface.php',
         'Illuminate\\View\\ViewName' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewName.php',
         'Illuminate\\View\\ViewServiceProvider' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/View/ViewServiceProvider.php',
+        'LaravelLang\\Lang\\Plugins\\Breeze' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Breeze.php',
+        'LaravelLang\\Lang\\Plugins\\Cashier' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Cashier.php',
+        'LaravelLang\\Lang\\Plugins\\Fortify' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Fortify.php',
+        'LaravelLang\\Lang\\Plugins\\Jetstream' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Jetstream.php',
+        'LaravelLang\\Lang\\Plugins\\Laravel' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Laravel.php',
+        'LaravelLang\\Lang\\Plugins\\Lumen' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Lumen.php',
+        'LaravelLang\\Lang\\Plugins\\Nova' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Nova.php',
+        'LaravelLang\\Lang\\Plugins\\SparkPaddle' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/SparkPaddle.php',
+        'LaravelLang\\Lang\\Plugins\\SparkStripe' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/SparkStripe.php',
+        'LaravelLang\\Lang\\Plugins\\Ui' => __DIR__ . '/..' . '/laravel-lang/lang/src/Plugins/Ui.php',
+        'LaravelLang\\Lang\\Provider' => __DIR__ . '/..' . '/laravel-lang/lang/src/Provider.php',
+        'LaravelLang\\Lang\\ServiceProvider' => __DIR__ . '/..' . '/laravel-lang/lang/src/ServiceProvider.php',
         'Laravel\\Sail\\Console\\AddCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/AddCommand.php',
         'Laravel\\Sail\\Console\\Concerns\\InteractsWithDockerComposeServices' => __DIR__ . '/..' . '/laravel/sail/src/Console/Concerns/InteractsWithDockerComposeServices.php',
         'Laravel\\Sail\\Console\\InstallCommand' => __DIR__ . '/..' . '/laravel/sail/src/Console/InstallCommand.php',

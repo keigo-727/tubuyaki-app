@@ -22,5 +22,6 @@ Route::get('/sample/{id}', [\App\Http\Controllers\sample\IndexController::class,
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
 ->name('tweet.index');
 
-Route::post('/tweet/create', \App\Http\Controllers\Tweet\IndexController::class)
+// 誤：IndexController　正：CreateController
+Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
 ->name('tweet.create');

@@ -16,6 +16,7 @@ class IndexController extends Controller
     public function __invoke(Request $request)
     {
         // dd()　ヘルパー関数　その場で処理を中断して変数の内容出力する。関数チェック
+        
         $tweets = Tweet::orderBy('created_at','DESC')->get();
         // 誤：return view('tweet.index')→正：return view('tweet.index')
         return view('tweet.index')

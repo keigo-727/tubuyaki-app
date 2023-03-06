@@ -15,10 +15,8 @@
                     @csrf
                     <label for="tweet-content">つぶやき</label>
                     <span>140文字まで</span>
-                    
-                    <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力"  >{{ Session::has('tweet') ? Session::get('tweet') : '' ; }}</textarea>
-                    
-                    <!-- バリデーション効かない -->
+                    <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力"  >
+                        {{ Session::has('tweet') ? Session::get('tweet') : '' ; }}</textarea>
                     @error('tweet')
                     <p style="color: red;"> {{ $message }} </p>
                     @enderror

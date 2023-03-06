@@ -17,12 +17,11 @@ class UpdateRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
     public function rules()
     {
         return [
-            'tweet' => 'required|max140'
+            'tweet' => 'required|max:140'
         ];
     }
     public function tweet(): string

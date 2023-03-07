@@ -16,7 +16,7 @@ class PutController extends Controller
      */
     public function __invoke(UpdateRequest $request)
     {
-        $tweet = tweet::where('id',$request->id())->fistOrFail();
+        $tweet = Tweet::where('id',$request->id())->firstOrFail();
         $tweet->content = $request->tweet();
         $tweet->save();
         return redirect()

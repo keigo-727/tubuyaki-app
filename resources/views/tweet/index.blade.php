@@ -24,7 +24,14 @@
                     @if (Session::has('tweet'))
                     {{ Session::get('tweet') }}
                     @endif
-                    
+                    @foreach($tweets as $tweet)
+                    <details>
+                        <summary>{{ $tweet->content }}</summary>
+                        <div>
+                            <a href= "{{ route('tweet.update.index',['tweetId' => $tweet->id ]) }}" >編集</a>
+                        </div>
+                    </details>
+                    @endforeach
                     </form>
                 </div>
 

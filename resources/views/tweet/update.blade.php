@@ -12,6 +12,9 @@
                 <div>
                     <a href="{{ route('tweet.index') }}"> << 戻る  </a>
                     <p>投稿フォーム</p>
+                    @if (session('feedback.success'))
+                    <p style="cplor:green">{{session('feedback.success') }} </p>
+                    @endif
                     <form action = "{{ route('tweet.update.put', ['tweetId' => $tweet->id] ) }}" method ="post">
                     @method('PUT')
                     @csrf
@@ -19,23 +22,11 @@
                     <span>140文字まで</span>
                     <textarea id="tweet-content" type="text" name="tweet" placeholder="つぶやきを入力"  > 
                         {{ $tweet->content }} </textarea>
-                @error('tweet')
+                    @error('tweet')
                     <p style="color: red;"> {{ $message }} </p>
-                @enderror
-                
+                    @enderror
                     <button type="submit">編集</button>
-                @if (session('feedback.success'))
-                    <p style="cplor:green">{{session('feedback.success') }} </p>
-                @endif
 
-                @foreach($tweet as $tweet)
-                    <details>
-                        <summary>{isset({ $tweet->content })}</summary>
-                        <div>
-                            <a href= "{{ route('tweet.update.index',['tweetId' => $tweet->id ]) }}" >編集</a>
-                        </div>
-                    </details>
-                @endforeach
                     </form>
                 </div>
     </body>

@@ -9,6 +9,7 @@
             <title>つぶやきアプリ</title>
             <body>
                 <h1>つぶやきアプリ</h1>
+                @auth
                 <div>
                     <p>投稿フォーム</p>
                     @if (session('feedback.success'))
@@ -23,6 +24,7 @@
                         <button type="submit">投稿</button>
                     </form>
                 </div>
+                @endauth
                     @error('tweet')
                     <p style="color: red;"> {{ $message }} </p>
                     @enderror

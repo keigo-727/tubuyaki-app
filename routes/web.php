@@ -18,18 +18,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::get('/sample/{id}', [\App\Http\Controllers\sample\IndexController::class,'showId']);
 
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
 ->name('tweet.index');
-
-// 誤：IndexController　正：CreateController
+Route::middleware('auth')->group(function () {
 Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
-->middleware('auth')
 ->name('tweet.create');
 
 Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)
@@ -40,7 +35,7 @@ Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutCont
 
 Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
-
+});
 
 
 Route::get('/dashboard', function () {

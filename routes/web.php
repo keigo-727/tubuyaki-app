@@ -23,6 +23,7 @@ Route::get('/sample/{id}', [\App\Http\Controllers\sample\IndexController::class,
 
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
 ->name('tweet.index');
+
 Route::middleware('auth')->group(function () {
 Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
 ->name('tweet.create');

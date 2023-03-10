@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="ja">
+    <link href = "/css/app.css" rel= "stylesheet">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
@@ -34,6 +35,7 @@
                 <summary>
                     {{ $tweet->content }} by{{$tweet->user->name}}
                 </summary>
+                @if(\Illuminate\Support\Facades\auth::id() === $tweet->user_id)
                 <div>
                     <a href= "{{ route('tweet.update.index',['tweetId' => $tweet->id ]) }}" >編集</a>
                     <form action = "{{ route('tweet.delete',['tweetId' => $tweet->id ]) }}" method ="post">
@@ -42,6 +44,9 @@
                             <button type="submit">削除</button>
                     </form>
                 </div>
+                @else
+                    編集できません
+                @endif
             </details>
         @endforeach
         </div>

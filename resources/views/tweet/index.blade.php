@@ -1,15 +1,17 @@
 <!doctype html>
 <html lang="ja">
-    <link href = "/css/app.css" rel= "stylesheet">
+    <link href = "{{ mix('/css/app.css') }}" rel= "stylesheet">
+    <script src="{{ mix('/js/app.js') }} "></script>
     <head>
         <meta charset="UTF-8">
         <meta name="viewport"
             content="width=device-width,user-scalabe=no,initial-scale=1.0,
             maximum-scale=1.0,minmum-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>つぶやきアプリ</title>
+<x-layout title="TOP| つぶやきアプリ">
     <body>
     <h1>つぶやきアプリ</h1>
+</x-layout>
         @auth
         <div>
             <p>投稿フォーム</p>

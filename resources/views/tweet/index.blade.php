@@ -8,10 +8,17 @@
             content="width=device-width,user-scalabe=no,initial-scale=1.0,
             maximum-scale=1.0,minmum-scale=1.0">
             <meta http-equiv="X-UA-Compatible" content="ie=edge">
-<x-layout title="TOP| つぶやきアプリ">
-    <body>
-    <h1>つぶやきアプリ</h1>
-</x-layout>
+
+<x-layouts title="TOP| つぶやきアプリ">
+    <x-layouts.single>
+    <h2 class="text-center text-blue-500 text-4xl font-bold mt-8 mb-8 ">
+        つぶやきアプリ
+    </h2>
+        <x-tweet.form.post></x-tweet.form.post>
+    </x-layouts.single>
+</x-layouts> 
+
+     <!-- <body>
         @auth
         <div>
             <p>投稿フォーム</p>
@@ -53,4 +60,4 @@
         @endforeach
         </div>
     </body>
-</html>
+</html> -->

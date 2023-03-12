@@ -11,7 +11,6 @@
             </div>
         </form>
         @endauth
-
-        {{ $slot }}
+        {{ $slot }} 
     </div>
 </div>

@@ -1,13 +1,19 @@
-@auth
+@props([
+    'tweet'
+])
 <div class="p-4">
-    <form action="{{ route('tweet.create') }}" method="post">
+    <form action="{{ route('tweet.update.put', ['tweetId' => $tweet->id]) }}" method="post">
+        @method('PUT')
         @csrf
+        @if (session('feedback.success'))
+        <x-alert.success>{{ session('feedback.success') }}</x-alert.success>
+        @endif
         <div class="mt-1">
             <textarea
                 name="tweet"
                 rows="3"
                 class="focus:ring-blue-400 focus:border-blue-400 mt-1 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
-                placeholder="つぶやきを入力"></textarea>
+                placeholder="つぶやきを入力">{{ $tweet->content }}</textarea>
         </div>
         <p class="mt-2 text-sm text-gray-500">
             140文字まで
@@ -19,17 +25,8 @@
 
         <div class="flex flex-wrap justify-end">
             <x-element.button>
-                つぶやく
+                編集
             </x-element.button>
         </div>
     </form>
 </div>
-@endauth
-@guest
-<div class="flex flex-wrap justify-center">
-    <div class="w-1/2 p-4 flex flex-wrap justify-evenly">
-        <x-element.button-a :href="route('login')">ログイン</x-element.button-a>
-        <x-element.button-a :href="route('register')" theme="secondary">会員登録</x-element.button-a>
-    </div>
-</div>
-@endguest

@@ -537,6 +537,8 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
     );
 
     public static $classMap = array (
+        'App\\Console\\Commands\\SampleCommand' => __DIR__ . '/../..' . '/app/Console/Commands/SampleCommand.php',
+        'App\\Console\\Commands\\SendDailyTweetCountMail' => __DIR__ . '/../..' . '/app/Console/Commands/SendDailyTweetCountMail.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -570,8 +572,11 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'App\\Http\\Requests\\Tweet\\CreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Tweet/CreateRequest.php',
         'App\\Http\\Requests\\Tweet\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Tweet/UpdateRequest.php',
         'App\\Jobs\\SampleJob' => __DIR__ . '/../..' . '/app/Jobs/SampleJob.php',
+        'App\\Mail\\DailyTweetCount' => __DIR__ . '/../..' . '/app/Mail/DailyTweetCount.php',
         'App\\Mail\\NewUserIntroduction' => __DIR__ . '/../..' . '/app/Mail/NewUserIntroduction.php',
+        'App\\Models\\Image' => __DIR__ . '/../..' . '/app/Models/Image.php',
         'App\\Models\\Tweet' => __DIR__ . '/../..' . '/app/Models/Tweet.php',
+        'App\\Models\\TweetImage' => __DIR__ . '/../..' . '/app/Models/TweetImage.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -692,11 +697,11 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'Cron\\HoursField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
         'Cron\\MinutesField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
         'Cron\\MonthField' => __DIR__ . '/..' . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+        'Database\\Factories\\ImageFactory' => __DIR__ . '/../..' . '/database/factories/ImageFactory.php',
         'Database\\Factories\\TweetFactory' => __DIR__ . '/../..' . '/database/factories/TweetFactory.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\UsersSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersSeeder.php',
-        'Database\\Seeders\\tweetsSeeder' => __DIR__ . '/../..' . '/database/seeders/tweetsSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',

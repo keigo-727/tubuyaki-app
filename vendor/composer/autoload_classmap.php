@@ -6,6 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App\\Console\\Commands\\SampleCommand' => $baseDir . '/app/Console/Commands/SampleCommand.php',
+    'App\\Console\\Commands\\SendDailyTweetCountMail' => $baseDir . '/app/Console/Commands/SendDailyTweetCountMail.php',
     'App\\Console\\Kernel' => $baseDir . '/app/Console/Kernel.php',
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
@@ -39,8 +41,11 @@ return array(
     'App\\Http\\Requests\\Tweet\\CreateRequest' => $baseDir . '/app/Http/Requests/Tweet/CreateRequest.php',
     'App\\Http\\Requests\\Tweet\\UpdateRequest' => $baseDir . '/app/Http/Requests/Tweet/UpdateRequest.php',
     'App\\Jobs\\SampleJob' => $baseDir . '/app/Jobs/SampleJob.php',
+    'App\\Mail\\DailyTweetCount' => $baseDir . '/app/Mail/DailyTweetCount.php',
     'App\\Mail\\NewUserIntroduction' => $baseDir . '/app/Mail/NewUserIntroduction.php',
+    'App\\Models\\Image' => $baseDir . '/app/Models/Image.php',
     'App\\Models\\Tweet' => $baseDir . '/app/Models/Tweet.php',
+    'App\\Models\\TweetImage' => $baseDir . '/app/Models/TweetImage.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',
@@ -161,11 +166,11 @@ return array(
     'Cron\\HoursField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/HoursField.php',
     'Cron\\MinutesField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MinutesField.php',
     'Cron\\MonthField' => $vendorDir . '/dragonmantank/cron-expression/src/Cron/MonthField.php',
+    'Database\\Factories\\ImageFactory' => $baseDir . '/database/factories/ImageFactory.php',
     'Database\\Factories\\TweetFactory' => $baseDir . '/database/factories/TweetFactory.php',
     'Database\\Factories\\UserFactory' => $baseDir . '/database/factories/UserFactory.php',
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\UsersSeeder' => $baseDir . '/database/seeders/UsersSeeder.php',
-    'Database\\Seeders\\tweetsSeeder' => $baseDir . '/database/seeders/tweetsSeeder.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
     'DeepCopy\\Exception\\CloneException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
     'DeepCopy\\Exception\\PropertyException' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',

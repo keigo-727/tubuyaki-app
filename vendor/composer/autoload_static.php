@@ -569,6 +569,8 @@ class ComposerStaticInit0fdf9c5d671d3ca33f7f19b1a84b1775
         'App\\Http\\Requests\\ProfileUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/ProfileUpdateRequest.php',
         'App\\Http\\Requests\\Tweet\\CreateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Tweet/CreateRequest.php',
         'App\\Http\\Requests\\Tweet\\UpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/Tweet/UpdateRequest.php',
+        'App\\Jobs\\SampleJob' => __DIR__ . '/../..' . '/app/Jobs/SampleJob.php',
+        'App\\Mail\\NewUserIntroduction' => __DIR__ . '/../..' . '/app/Mail/NewUserIntroduction.php',
         'App\\Models\\Tweet' => __DIR__ . '/../..' . '/app/Models/Tweet.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',

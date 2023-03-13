@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Carbon\Carbon;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Tweet>
@@ -12,13 +13,14 @@ class TweetFactory extends Factory
     /**
      * Define the model's default state.
      *
-     * @return array
+     * @return array<string, mixed>
      */
     public function definition()
     {
         return [
-            'user_id' => 1,//つぶやきを投稿したユーザーのIDをdefaultで１とする
-            'content' => $this ->faker->realText(100)
+            'user_id' => 1, // つぶやきを投稿したユーザーのIDをデフォルトで1とする
+            'content' => $this->faker->realText(140),
+            'created_at' => Carbon::now()->yesterday()
         ];
     }
 }

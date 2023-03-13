@@ -38,6 +38,8 @@ return array(
     'App\\Http\\Requests\\ProfileUpdateRequest' => $baseDir . '/app/Http/Requests/ProfileUpdateRequest.php',
     'App\\Http\\Requests\\Tweet\\CreateRequest' => $baseDir . '/app/Http/Requests/Tweet/CreateRequest.php',
     'App\\Http\\Requests\\Tweet\\UpdateRequest' => $baseDir . '/app/Http/Requests/Tweet/UpdateRequest.php',
+    'App\\Jobs\\SampleJob' => $baseDir . '/app/Jobs/SampleJob.php',
+    'App\\Mail\\NewUserIntroduction' => $baseDir . '/app/Mail/NewUserIntroduction.php',
     'App\\Models\\Tweet' => $baseDir . '/app/Models/Tweet.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',

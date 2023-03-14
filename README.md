@@ -1,4 +1,4 @@
-# tubuyaiter-app
+# tubuyaki-app
 Laravel　勉強用
 
 機能

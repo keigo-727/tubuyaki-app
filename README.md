@@ -37,6 +37,10 @@ Laravel　勉強用
 　
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+sailを使えるようにする
+composer require laravel/sail --dev　
+
+php artisan sail:install
 
 cd tubuyaki-app && ./vendor/bin/sail up -d
 

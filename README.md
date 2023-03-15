@@ -37,7 +37,9 @@ Laravel　勉強用
 　
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+
 sailを使えるようにする
+
 composer require laravel/sail --dev　
 
 php artisan sail:install
@@ -46,7 +48,7 @@ cd tubuyaki-app && ./vendor/bin/sail up -d
 
 ※次回以降　sail up -d を入力してdockerを起動する
 
- localhost　とURLを入力
+localhost　とURLを入力　Laravelの画面が出れば成功
 
 localhost:8025 メールサーバー
 

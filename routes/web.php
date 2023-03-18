@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MyPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,9 @@ Route::get('/sample/{id}', [\App\Http\Controllers\sample\IndexController::class,
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
 ->name('tweet.index');
 
+Route::get('/mypage', [MyPageController::class, 'index'])
+->name('mypage');
+
 Route::middleware('auth')->group(function () {
 Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class)
 ->name('tweet.create');
@@ -37,6 +41,7 @@ Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutCont
 Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
 });
+
 
 
 Route::get('/dashboard', function () {

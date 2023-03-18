@@ -19,11 +19,9 @@ Laravel　勉強用
 
 これから実装したいもの
 
-・マイページ画面の追加
-　
-ユーザーごとのアイコンを設定し表示
-　
-自分が投稿したもののみ表示、編集、修正を行う
+・マイページ画面の追加 
+
+->ユーザーごとのアイコンを設定し表示,自分が投稿したもののみ表示、編集、修正を行う
 
 ・ログイン、会員登録画面　を独立させたい
 　
@@ -38,11 +36,17 @@ Laravel　勉強用
 
 ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
 
+sailを使えるようにする
+
+composer require laravel/sail --dev　
+
+php artisan sail:install
+
 cd tubuyaki-app && ./vendor/bin/sail up -d
 
 ※次回以降　sail up -d を入力してdockerを起動する
 
- localhost　とURLを入力
+localhost　とURLを入力　Laravelの画面が出れば成功
 
 localhost:8025 メールサーバー
 

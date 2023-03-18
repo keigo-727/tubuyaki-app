@@ -45,7 +45,14 @@
                             <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                                {{ __('Log Out') }} 
+                            </x-dropdown-link>
+                        </form>
+                        <form method="index" action="{{ route('mypage') }}">
+                        <x-dropdown-link :href="route('mypage')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('mypage') }} 
                             </x-dropdown-link>
                         </form>
                     </x-slot>

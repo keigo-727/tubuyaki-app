@@ -1,8 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\ProfileGetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,14 +35,18 @@ Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class
 Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)
 ->name('tweet.update.index')->where('tweetId','[0-9]+');
 
+Route::get('/profile/edit', [\App\Http\Controllers\ProfileGetController::class,'index'])
+->name('profile.edit');
+
 Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)
 ->name('tweet.update.put')->where('tweetId','[0-9]+');
+
+Route::put('/profile/edit', [\App\Http\Controllers\Update\ProfilePutController::class,'update'])
+->name('profile.edit.put');
 
 Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
 });
-
-
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -14,10 +14,13 @@ class MypageController extends Controller
         //ログイン情報を取得している。
         $user = $request->user();
         $tweets = $user->tweets()->latest()->get();
+        $user_icon = $user->user_icon;
+
         //ユーザー情報に紐づくtweetとユーザー情報を渡す。
         return view('pages/mypage', [
             'user' => $user,
             'tweets' => $tweets,
+            'user_icon' => $user_icon, // アイコンのURLをビューに渡す
         ]);
     }
 }

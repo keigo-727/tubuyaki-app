@@ -13,7 +13,7 @@
             ];
         @endphp
     <div>
-        <form action="{{ route('profile.edit.put')}}" method="put">
+        <form action="{{ route('profile.edit.put')}}" method="post" enctype="multipart/form-data">
         @method('PUT')
         @csrf
         @if (session('feedback.success'))
@@ -46,7 +46,6 @@
                 >{{ $profile }}</textarea>
             </div>
         </div>
-
         @error('tweet')
         <x-alert.error>{{ $message }}</x-alert.error>
         @enderror
@@ -59,4 +58,3 @@
     </form>
     </x-layout.single>
 </x-layout>
-

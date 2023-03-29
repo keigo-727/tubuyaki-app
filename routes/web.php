@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\ProfileGetController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,12 +42,15 @@ Route::get('/profile/edit', [\App\Http\Controllers\ProfileGetController::class,'
 Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)
 ->name('tweet.update.put')->where('tweetId','[0-9]+');
 
-Route::put('/profile/edit', [\App\Http\Controllers\Update\ProfilePutController::class,'update'])
+Route::put('/profile/edit', [\App\Http\Controllers\Tweet\Update\ProfilePutController::class,'update'])
 ->name('profile.edit.put');
 
 Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
 });
+Route::get('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'index'])->name('mypage.userIcon.edit');
+Route::put('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'update'])->name('mypage.userIcon.edit.update');
+Route::post('mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'update'])->name('mypage.userIcon.edit.update');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

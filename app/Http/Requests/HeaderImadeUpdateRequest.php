@@ -1,29 +1,24 @@
 <?php
 
-namespace App\Http\Requests;
+namespace app\Http\Requests;
 
-use App\Models\User;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class ProfileUpdateRequest extends FormRequest
+class HeaderImageUpdateRequest extends FormRequest
 {
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
-     */
-    public function rules(): array
+    public function authorize()
+    {
+        return true;
+    }
+
+    public function rules()
     {
         return [
-            'name' => ['string', 'max:255'],
-            'email' => ['email', 'max:255',
-            Rule::unique(User::class)->ignore($this->user()->id)],
-            'profile' => ['string', 'max:255'],
-            'user_icon' => ['required', 'image', 'max:2048'],
             'header_image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ];
     }
+
     public function messages()
     {
         return [

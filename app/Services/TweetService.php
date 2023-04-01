@@ -32,21 +32,23 @@ class TweetService
             ->count();
     }
     public function saveTweet(int $userId, string $content, array $images)
-    {
-        DB::transaction(function () use ($userId, $content, $images) {
-            $tweet = new Tweet;
-            $tweet->user_id = $userId;
-            $tweet->content = $content;
-            $tweet->save();
-            foreach ($images as $image) {
-                Storage::putFile('public/images', $image);
-                $imageModel = new Image();
-                $imageModel->name = $image->hashName();
-                $imageModel->save();
-                $tweet->images()->attach($imageModel->id);
-            }
-        });
-    }
+{
+    DB::transaction(function () use ($userId, $content, $images) {
+        $tweet = new Tweet;
+        $tweet->user_id = $userId;
+        $tweet->content = $content;
+        $tweet->save();
+        foreach ($images as $image) {
+            Storage::putFile('public/images', $image);
+            $imageModel = new Image();
+            $imageModel->name = $image->hashName();
+            $imageModel->save();
+            $tweet->images()->attach($imageModel->id);
+        }
+        // ユーザー情報を取得するために追加
+        $tweet->load('user');
+    });
+}
     public function deleteTweet(int $tweetId)
     {
         DB::transaction(function () use ($tweetId) {

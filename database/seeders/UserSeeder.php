@@ -16,13 +16,6 @@ class UserSeeder extends Seeder
         {
             // ランダムなファイル名を生成
             $fileName = Str::random(40) . '.png';
-            // ダミーアイコンをstorage/app/public/images以下にコピー
-            $imagePath = storage_path('app/public/images/dummy-icon.png');
-            $destinationPath = storage_path('app/public/images/' . $fileName);
-            copy($imagePath, $destinationPath);
-            // ユーザーのアイコンとして登録
-            $user->user_icon = $fileName;
-            $user->save();
         });
     }
 }

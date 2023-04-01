@@ -17,6 +17,7 @@ class ProfileGetController extends Controller
         $name = $user->name;
         $profile = $user->profile;
         $email = $user->email;
+        $header_image = $user->header_image; 
         $user_icon = $user->user_icon;
 
         return view('pages.userProfileEdit', [
@@ -24,6 +25,7 @@ class ProfileGetController extends Controller
             'profile' => $profile,
             'email' => $email,
             'user_icon' => $user_icon,
+            'header_image' =>$header_image,
         ]);
 
     }

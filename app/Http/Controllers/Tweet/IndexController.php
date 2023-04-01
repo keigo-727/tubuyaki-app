@@ -1,23 +1,33 @@
 <?php
-
 namespace App\Http\Controllers\Tweet;
 
 use App\Http\Controllers\Controller;
 use App\Services\TweetService;
+use App\Services\UserService;
 use Illuminate\Http\Request;
-
-// use Illuminate\Http\Response;
 
 class IndexController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request,TweetService $tweetService)
+    public function __invoke(Request $request, TweetService $tweetService, UserService $userService)
     {
-        // dd()　ヘルパー関数　その場で処理を中断して変数の内容出力する。関数チェック
-        
         $tweets = $tweetService->getTweets();
-        return view('tweet.index')->with('tweets',$tweets);
+
+        foreach ($tweets as $tweet) 
+        {
+            $user = $userService->getUserById($tweet->user_id);
+            $tweet->user_icon = $user->user_icon;
+            $tweet->user_name = $user->name;
+            
+            if (is_null($tweet->user_icon)) 
+            {
+                $tweet->user_icon = asset('images/default_icon.png');
+            }
+            $tweet->created_at_string = $tweet->created_at->format('Y-m-d H:i');
+        }
+        return view('tweet.index')->with('tweets', $tweets);
     }
+    
 }

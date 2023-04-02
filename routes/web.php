@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MyPageController;
+use App\Http\Controllers\ProfileGetController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,14 +36,25 @@ Route::post('/tweet/create', \App\Http\Controllers\Tweet\CreateController::class
 Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)
 ->name('tweet.update.index')->where('tweetId','[0-9]+');
 
+Route::get('/profile/edit', [\App\Http\Controllers\ProfileGetController::class,'index'])
+->name('profile.edit');
+
 Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)
 ->name('tweet.update.put')->where('tweetId','[0-9]+');
+
+Route::put('/profile/edit', [\App\Http\Controllers\Tweet\Update\ProfilePutController::class,'update'])
+->name('profile.edit.put');
 
 Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
 ->name('tweet.delete');
 });
+Route::get('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'index'])->name('mypage.userIcon.edit');
+Route::put('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'update'])->name('mypage.userIcon.edit.update');
 
 
+Route::get('/mypage/headerImage/edit', [App\Http\Controllers\headerImageController::class, 'index'])->name('mypage.headerImage.edit');
+Route::put('/mypage/headerImage/edit', [App\Http\Controllers\headerImageController::class, 'update'])->name('mypage.headerImage.edit.update');
+Route::delete('/mypage/headerImage/delete', [App\Http\Controllers\headerImageController::class, 'delete'])->name('mypage.headerImage.edit.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

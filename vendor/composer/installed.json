@@ -8648,7 +8648,6 @@
     "dev": true,
     "dev-package-names": [
         "doctrine/instantiator",
-        "fakerphp/faker",
         "filp/whoops",
         "hamcrest/hamcrest-php",
         "laravel/breeze",

@@ -21,6 +21,16 @@ class MypageController extends Controller
         $user_icon = $user->user_icon;
         $name = $user->user_name;
         $header_Image = $user->header_image;
+        
+        if (is_null($user->user_icon))
+            {
+                $user->user_icon = asset('storage/user_icons/default_icon.png');
+            }
+        if (is_null($user->header_image))
+            {
+                $user->header_image = asset('storage/user_icons/default_header_image.png');
+            }
+
         //ユーザー情報に紐づくtweetとユーザー情報を渡す。
         return view('pages/mypage', [
             'user' => $user,

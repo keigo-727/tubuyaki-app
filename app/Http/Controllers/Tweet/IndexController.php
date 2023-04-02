@@ -23,9 +23,9 @@ class IndexController extends Controller
             
             if (is_null($tweet->user_icon)) 
             {
-                $tweet->user_icon = asset('images/default_icon.png');
+                $tweet->user_icon = asset('storage/user_icons/default_icon.png');
             }
-            $tweet->created_at_string = $tweet->created_at->format('Y-m-d H:i');
+            $tweet->created_at_string = $tweet->created_at->format('Y年m月d日 H時i分');
         }
         return view('tweet.index')->with('tweets', $tweets);
     }

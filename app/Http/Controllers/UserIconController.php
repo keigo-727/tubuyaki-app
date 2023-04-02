@@ -14,6 +14,11 @@ class UserIconController extends Controller
     public function index()
     {
         $user = Auth::user();
+        //nullであれば、デフォルト画像を表示する
+        if (is_null($user->user_icon))
+        {
+            $user->user_icon = asset('storage/user_icons/default_icon.png');
+        }
         return view('pages/userIconEdit', ['user' => $user]);
         
     }

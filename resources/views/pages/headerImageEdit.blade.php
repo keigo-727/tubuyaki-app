@@ -21,7 +21,7 @@
             <div class="flex flex-col md:flex-row md:items-center justify-center gap-10">
                 <h2 class="text-center font-bold mb-4">現在のヘッダー</h2>
                 <div class="border border-dark" style="height: 250px;">
-                    <img src="{{asset($user->header_image) }}"alt="{{ $user->name }}のヘッダー画像 " style="width: 100%; height: 250px;">
+                <img src="{{asset($user->header_image) }}"alt="{{ $user->name }}のヘッダー画像 " style="width: 100%; height: 250px;">
                 </div>
             </div> 
                 <h2 class="text-center font-bold mb-4">新しいヘッダー</h2> 

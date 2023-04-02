@@ -8,7 +8,7 @@
         
             <div>
                 <div class="d-flex flex-row">
-                    <img src="{{ $tweet->user_icon ?? asset('images/default_icon.png') }}" alt="{{ $tweet->user_name }}のアイコン" class="rounded-full w-8 h-8"style="height: 50px;width: 50px;">
+                    <img src="{{$tweet->user_icon ?? asset('storage/user_icons/default_icon.png') }}" alt="{{ $tweet->user_name }}のアイコン" class="rounded-full w-8 h-8"style="height: 50px;width: 50px;">
                     <span class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs mb-2">
                     {{ $tweet->user_name }}
                     <span class="text-gray-400 text-xs">{{ $tweet->created_at_string }}</span>

@@ -13,32 +13,30 @@
                     <x-tweet.headerImageOptions></x-tweet.headerImageOptions>
                 </div>
             <div class="border border-dark" style="height: 250px;">
-                <img src="{{ $user->header_image ?? asset('images/default_header.jpg') }}"
+                <img src="{{ $user->header_image ?? asset('storage/header_image/default_header_image.png') }}"
                     alt="{{ $user->name }}のヘッダー画像 " style="height: 100%;width: 100%;position: relative;top: -19px;">
             </div>
-
-            <div class="flex flex-wrap items-center">
                 <div class="flex-none float-left " >
                     <a href="{{ route('mypage.userIcon.edit') }}">
                         <img src="{{ asset($user->user_icon) }}" alt="{{ $user->name }}'s profile picture" 
                         class="rounded-circle h-24 w-24 bg-blue-500 mb-4 pull-left" 
                         style="width: 130px;height: 130px;border-radius: 50%;box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
-                        position: relative;bottom: 65px;left: 30px;margin-bottom: -50px;">
+                        position: relative;bottom: 65px;left: 30px;margin-bottom: -60px;">
                     </a>
                 </div>
-                
+                    @if(Auth::check() && Auth::user()->id == $user->id)
+                    <div class="float-right "style="position: relative; top: 26px;z-index: 2147483647;" >
+                        <x-tweet.profileEdit></x-tweet.profileEdit>
+                    </div>
+                    @endif 
+            <div class="flex flex-wrap items-center">
                 <div class="flex-grow">
-                    <div class="py-2 d-flex flex-column">
+                    <div class="py-2 d-flex flex-column" style="position: relative;">
                         <h1 class="text-3xl">UserName:{{ $user->name }}</h1>
                         <p class="text-gray-600 ">ID:{{ $user->email }}</p>
                     </div>
                     <p class="text-gray-600 mb-4 text-3xl">{{ $user->profile }}</p>
-                    @if(Auth::check() && Auth::user()->id == $user->id)
-                        <div class="flex justify-center">
-                            <a href="{{ route('profile.edit') }}" class="bg-blue-500 hover:bg-blue-700 
-                            text-white font-bold py-2 px-4 rounded-full">プロフィールを編集する</a>
-                        </div>
-                    @endif
+                    
                 </div>
             </div>
             @props([
@@ -48,10 +46,10 @@
     <ul>
         @foreach($tweets as $tweet)
         <li class="tweet-box border-b last:border-b-0 border-gray-200 p-4 flex items-start justify-between">
-        
             <div>
                 <div class="d-flex flex-row">
-                    <img src="{{ $user->user_icon ?? asset('images/default_icon.png') }}" alt="{{ $tweet->user_name }}のアイコン" class="rounded-full w-8 h-8"style="height: 50px;width: 50px;">
+                <img src="{{$user->user_icon ?? asset('storage/user_icons/default_icon.png') }}"
+                alt="{{ $tweet->user_name }}のアイコン" class="rounded-full w-8 h-8"style="height: 50px;width: 50px;">
                     <span class="inline-block rounded-full text-gray-600 bg-gray-100 px-2 py-1 text-xs mb-2">
                     {{ $user->name }}
                     <span class="text-gray-400 text-xs">{{ $tweet->created_at_string }}</span>

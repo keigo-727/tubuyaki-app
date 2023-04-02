@@ -15,6 +15,14 @@ class headerImageController extends Controller
     {
         // ユーザーの認証情報を取得する
         $user = Auth::user();
+        $header_Image = $user->header_image;
+         // ユーザーのheader_imageフィールドがnullであれば、デフォルト画像を表示する
+        if (is_null($user->header_image))
+        {
+            $user->header_image = asset('storage/user_icons/default_header_image.png');
+        }
+
+
         // ユーザーのヘッダー画像を編集するためのビューを返す
         return view('pages.headerImageEdit', ['user' => $user]);
     }
@@ -48,6 +56,6 @@ class headerImageController extends Controller
         $user->save();
 
         // マイページにリダイレクトする
-        return redirect()->route('mypage.headerImage.edit')->with('success', 'ヘッダー画像を削除しました。');
+        return redirect()->route('mypage.headerImage.edit')->with('feedback.success', 'ヘッダー画像を削除しました。');
     }
 }

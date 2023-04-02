@@ -15,6 +15,7 @@ class UserIconController extends Controller
     {
         $user = Auth::user();
         return view('pages/userIconEdit', ['user' => $user]);
+        
     }
 
     public function update(Request $request)

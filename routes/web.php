@@ -50,13 +50,11 @@ Route::delete('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\DeleteContr
 });
 Route::get('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'index'])->name('mypage.userIcon.edit');
 Route::put('/mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'update'])->name('mypage.userIcon.edit.update');
-Route::post('mypage/userIcon/edit', [App\Http\Controllers\UserIconController::class, 'update'])->name('mypage.userIcon.edit.update');
 
 
 Route::get('/mypage/headerImage/edit', [App\Http\Controllers\headerImageController::class, 'index'])->name('mypage.headerImage.edit');
-Route::put('/mypage/headerImage/update', [App\Http\Controllers\headerImageController::class, 'update'])->name('mypage.headerImage.update');
-Route::post('/mypage/headerImage/store', [App\Http\Controllers\headerImageController::class, 'store'])->name('mypage.headerImage.store');
-Route::delete('/mypage/headerImage/delete', [App\Http\Controllers\headerImageController::class, 'delete'])->name('mypage.headerImage.delete');
+Route::put('/mypage/headerImage/edit', [App\Http\Controllers\headerImageController::class, 'update'])->name('mypage.headerImage.edit.update');
+Route::delete('/mypage/headerImage/delete', [App\Http\Controllers\headerImageController::class, 'delete'])->name('mypage.headerImage.edit.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

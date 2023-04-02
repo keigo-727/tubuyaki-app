@@ -12,17 +12,20 @@
         <x-element.breadcrumbs :breadcrumbs="$breadcrumbs"></x-element.breadcrumbs>
         <div class="bg-white rounded-md shadow-lg mt-5 mb-5 p-4">
             <div class="flex flex-col md:flex-row md:items-center justify-center gap-10">
-                <div class="w-48 h-48 relative">
+                <div class="flex flex-col md:flex-row md:items-center justify-center gap-10">
                     <h2 class="text-center font-bold mb-4">現在のアイコン</h2>
-                    <img src="{{ asset($user->user_icon) }}" alt="現在のアイコン" class="rounded-full h-48 w-48 object-cover" style="border: 1px solid #ccd6dd;">
-                </div>   
-                <div>
-                    <h2 class="font-bold mb-4">新しいアイコン</h2>
-                    <div class="flex justify-center items-center h-48 w-48 rounded-full bg-gray-100 border-2 border-gray-200 overflow-hidden">
-                        <img id="iconPreview" src="#" alt="新しいアイコンのプレビュー" style="display:none; width: 100%; height: 100%;">
+                    <div class="mb-4" style="position: relative;left: 200px;">
+                        <img src="{{ asset($user->user_icon) }}" alt="現在のアイコン" class=" h-48 w-48 object-cover" style="border: 1px solid #ccd6dd;width: 200px; height: 200px;">
                     </div>
-                    <input type="file" name="user_icon" id="user_icon" onchange="previewIcon(this)" class="mt-4">
-                    <p class="text-xs text-gray-600 mt-1">ファイルサイズは2MBまでにしてください</p>
+                </div>
+                <h2 class="text-center font-bold mb-4">新しいアイコン</h2>
+                <div class="flex flex-col md:flex-row center-block gap-10  mb-4" style="width: 100%; height: 200px;" >
+                    <div class="flex justify-center items-center h-48 w-48 bg-gray-100 border-2 border-gray-200"style="position: relative;left: 200px;"> 
+                        <img id="iconPreview" src="#" alt="新しいアイコンのプレビュー" class=" border border-dark " style="display:none; width: 200px; height: 200px;">
+                    </div>
+                    <input type="file" name="user_icon" id="user_icon" onchange="previewIcon(this)" class="mt-4 center-block">
+                    <p class="text-xs text-gray-600 m-4">ファイルサイズは2MBまでにしてください</p>
+                    <br>
                 </div>    
             </div>    
         </div>
